@@ -9,6 +9,8 @@ const arrayOptions = ["Rock", "Paper", "Scissors"];
 let randomIndex = Math.floor(Math.random() * 3);
 
 //3) Use the random index above to select one of the options in the array 
+let computerChoice = arrayOptions[randomIndex];
+
 //4) Return that option 
 
 }
