@@ -3,9 +3,11 @@
 function getComputerChoice() {
 
 //1) Create an array with the three options
+const arrayOptions = ["Rock", "Paper", "Scissors"];
 
-const arrayOptions = ["Rock", "Paper", "Scissors"]
 //2) Create a random index from 0 - 2
+let randomIndex = Math.floor(Math.random() * 3);
+
 //3) Use the random index above to select one of the options in the array 
 //4) Return that option 
 
