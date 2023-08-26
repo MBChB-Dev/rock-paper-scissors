@@ -12,5 +12,5 @@ let randomIndex = Math.floor(Math.random() * 3);
 let computerChoice = arrayOptions[randomIndex];
 
 //4) Return that option 
-
+return computerChoice;
 }
