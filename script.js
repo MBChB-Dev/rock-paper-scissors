@@ -22,22 +22,37 @@ return computerChoice;
 function playRound(playerSelection, computerSelection) {
     // your code here!
    
-//1) Convert userInput to lowercase
+let userInput = playerSelection.toLowerCase();      
+ 
+if (userInput === "rock") {
+        if (computerSelection === "rock") {
+        return "It's a draw"
+    }   else if (computerSelection === "paper") {
+        return "You Lose!  Paper beats Rock"
+    }   else if (computerSelection === "scissors") {
+        return "You Win! Rock beats Scissors"
+}
+if (userInput === "paper") {
+        if (computerSelection === "paper") {
+        return "It's a draw"
+    }   else if (computerSelection === "scissors") {
+        return "You Lose!  Scissors beats Paper"
+    }   else if (computerSelection === "rock") {
+        return "You Win! Paper beats Rock"
+    }
+} 
+if (userInput === "scissors") {
+        if (computerSelection === "scissors") {
+        return "It's a draw"
+    }   else if (computerSelection === "rock") {
+        return "You Lose!  Rock beats Scissors"
+    }   else if (computerSelection === "paper") {
+        return "You Win! Scissors beats Paper"
+    }
+}
+} 
+} 
 
-//2) Write logic for the case of the player selecting ROck: 
-
-//      If the playerSelection is rock 
-//          if the computerSelection is rock, return "It's a draw"
-
-//          else if the computerSelection is paper, return "You Lose!  Paper beats Rock"
-
-//          else if the computerSelection is scissors, return "You Win! Rock beats Scissors"
-
-//3) Copy-paste the logic above for the other player selections of paper/scissors and replace variables accordingly
-
-
-  }
-   
-  const playerSelection = "rock";
-  const computerSelection = getComputerChoice();
-  console.log(playRound(playerSelection, computerSelection));
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
