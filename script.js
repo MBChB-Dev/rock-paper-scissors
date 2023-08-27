@@ -31,29 +31,29 @@ if (userInput === "rock") {
         return "You Lose!  Paper beats Rock"
     }   else if (computerSelection === "scissors") {
         return "You Win! Rock beats Scissors"
+} 
+}   else if (userInput === "paper") {
+            if (computerSelection === "paper") {
+            return "It's a draw"
+        }   else if (computerSelection === "scissors") {
+            return "You Lose!  Scissors beats Paper"
+        }   else if (computerSelection === "rock") {
+            return "You Win! Paper beats Rock"
+}  
+}   else if (userInput === "scissors") {
+            if (computerSelection === "scissors") {
+            return "It's a draw"
+        }   else if (computerSelection === "rock") {
+            return "You Lose!  Rock beats Scissors"
+        }   else if (computerSelection === "paper") {
+            return "You Win! Scissors beats Paper"
+        }
+} 
 }
-if (userInput === "paper") {
-        if (computerSelection === "paper") {
-        return "It's a draw"
-    }   else if (computerSelection === "scissors") {
-        return "You Lose!  Scissors beats Paper"
-    }   else if (computerSelection === "rock") {
-        return "You Win! Paper beats Rock"
-    }
-} 
-if (userInput === "scissors") {
-        if (computerSelection === "scissors") {
-        return "It's a draw"
-    }   else if (computerSelection === "rock") {
-        return "You Lose!  Rock beats Scissors"
-    }   else if (computerSelection === "paper") {
-        return "You Win! Scissors beats Paper"
-    }
-}
-} 
-} 
 
-
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
 
 // Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 // You have not officially learned how to “loop” over code to repeat function calls… if you already know about loops from somewhere else (or if you feel like doing some more learning) feel free to use them. If not, don’t worry! Just call your playRound function 5 times in a row. Loops are covered in the next lesson.
@@ -62,14 +62,21 @@ if (userInput === "scissors") {
 // Feel free to re-work your previous functions if you need to. Specifically, you might want to change the return value to something more useful.
 // Feel free to create more “helper” functions if you think it would be useful.
 
-//1) Create game function 
-//2) Set total game count to 5
-//3) Create a variable for number of wins 
-//4) Create a for loop (set game to 1, check if game is less than or equal to total games, increment game)
-//5) if outcome of playRound function is a win, increment number of wins 
-//6) when loop completes, if wins >= 3 console log the score and "you are the winner" else console log the score and "you lost"
+function game() {
+//1) Set the player Score 
+    let playerScore = 0;
+
+//2) Set the computer score
+    let computerScore = 0;
+
+//3) Set the game to the first round 
+    let roundNumber = 1
+    
+//4) Create a nested function to play a round
+
+//5) Set the stopping criteria to return the XPathResult. If criteria not met, move on to playing another round
+//6) Play a round by getting player and computer input and calling playround function
+//7) Console log the XPathResult, increment round and scores, call play another round 
 
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+}
