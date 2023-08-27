@@ -51,9 +51,6 @@ if (userInput === "rock") {
 } 
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
 
 // Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 // You have not officially learned how to “loop” over code to repeat function calls… if you already know about loops from somewhere else (or if you feel like doing some more learning) feel free to use them. If not, don’t worry! Just call your playRound function 5 times in a row. Loops are covered in the next lesson.
@@ -71,12 +68,43 @@ function game() {
 
 //3) Set the game to the first round 
     let roundNumber = 1
-    
+
 //4) Create a nested function to play a round
+    function nestedPlayRound() {
 
-//5) Set the stopping criteria to return the XPathResult. If criteria not met, move on to playing another round
+//5) Set the stopping criteria to return the Result. If criteria not met, move on to playing another round
+    if (roundNumber > 5) {
+        if (playerScore > computerScore) {
+            console.log(`Gamer over: Congratulations, you win with a score of ${playerScore} / 5 `);
+        } else if (computerScore >  playerScore) {
+            console.log(`Game over: Sorry, you lost with a score of ${playerScore} / 5`)
+        } else if (computerScore === playerScore) {
+            console.log(`Game over: It's a draw`);
+        }
+
+        return;
+    }
+
 //6) Play a round by getting player and computer input and calling playround function
-//7) Console log the XPathResult, increment round and scores, call play another round 
+        const playerSelection = prompt("Enter one of the following: rock, paper, scissors");
+        const computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
 
+//7) Console log the Result, increment round and scores, call play another round 
+        console.log(result);
 
+        if (result === "You Win! Rock beats Scissors" || result === "You Win! Paper beats Rock" || result === "You Win! Scissors beats Paper") {
+            playerScore++;
+        } else if (result === "You Lose!  Paper beats Rock" || result === "You Lose!  Scissors beats Paper" || result === "You Lose!  Rock beats Scissors") {
+            computerScore++;
+        }
+
+        roundNumber++;
+
+        nestedPlayRound()
 }
+
+    nestedPlayRound();
+}
+
+game();
