@@ -94,10 +94,15 @@ function game() {
 //Start the Game
 //game();
 
+const roundNumberDiv = document.querySelector(".roundNumber");
 const resultsDiv = document.querySelector(".results");
 const scoreDiv = document.querySelector(".score");
 const buttons = document.querySelectorAll("button");
+const winnerDiv = document.querySelector(".winner");
 const buttonArray = Array.from(buttons);
+let playerScore = 0;
+let computerScore = 0;
+let roundNumber = 1;
 
 buttonArray.forEach((button) => {
     button.addEventListener('click', () => {
@@ -105,6 +110,35 @@ buttonArray.forEach((button) => {
         const computerSelection = getComputerChoice();
         let result = playRound(playerSelection, computerSelection);
         resultsDiv.textContent = result;
+
+        roundNumber++;
+
+        if (roundNumber > 5) {
+            if (playerScore > computerScore) {
+                winnerDiv.textContent = `Final result: Congratulations, you win with a score of ${playerScore} / 5`;
+            } else if (computerScore >  playerScore) {
+                winnerDiv.textContent = `Final result: Sorry, you lost with a score of ${playerScore} / 5`
+            } else if (computerScore === playerScore) {
+                winnerDiv.textContent = `Final result: It's a draw`;
+        }
+
+            return;
+        }
+
+        if (result === "You Win! Rock beats Scissors" || result === "You Win! Paper beats Rock" || result === "You Win! Scissors beats Paper") {
+
+            playerScore++;
+
+        } else if (result === "You Lose!  Paper beats Rock" || result === "You Lose!  Scissors beats Paper" || result === "You Lose!  Rock beats Scissors") {
+
+            computerScore++;
+        }
+        roundNumberDiv.textContent = `Round number: ${roundNumber} / 5`;
+        scoreDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+
+
+        
     })
 })
+
 
