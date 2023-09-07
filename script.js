@@ -92,4 +92,19 @@ function game() {
 
 
 //Start the Game
-game();
+//game();
+
+const resultsDiv = document.querySelector(".results");
+const scoreDiv = document.querySelector(".score");
+const buttons = document.querySelectorAll("button");
+const buttonArray = Array.from(buttons);
+
+buttonArray.forEach((button) => {
+    button.addEventListener('click', () => {
+        const playerSelection = button.textContent;
+        const computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
+        resultsDiv.textContent = result;
+    })
+})
+
