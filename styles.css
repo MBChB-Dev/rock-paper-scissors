@@ -2,17 +2,17 @@ body {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    margin: 
+    font-weight: bold;
 }
 
 .body-content {
     display: flex;
     flex-direction: column;
-    border: 20px solid blue;
+    /* border: 20px solid blue; */
     flex: 1;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     width: 900px;
 }
 
@@ -28,11 +28,13 @@ body {
 }
 
 button {
-    border: 20px solid blue;
+    border: 20px solid;
     padding: 100px 50px;
     font-size: 26px;
     margin: 20px;
     width: 300px;
+    border-radius: 40px;
+    font-weight: bold;
 }
 
 .results {
@@ -48,4 +50,22 @@ button {
 .winner {
     padding: 20px 50px;
     font-size: 26px;
+}
+
+.rock {
+    color: white;
+    background-color: rgba(190, 75, 30, 0.925);
+    border: 20px solid rgb(184, 94, 20)
+}
+
+.paper {
+    color: black;
+    background-color: rgb(173, 164, 164);
+    border: 20px solid rgb(168, 159, 159);
+}
+
+.scissors {
+    color: white;
+    background-color: rgb(80, 68, 68);
+    border: 20px solid rgb(83, 76, 76);
 }
